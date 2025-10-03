@@ -205,3 +205,10 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Transcribe specific
+output/
+temp/
+*.mp3
+*.wav
+*.m4a
