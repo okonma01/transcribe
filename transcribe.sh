@@ -14,6 +14,12 @@ TEMP_DIR="temp"
 # Create directories
 mkdir -p "$OUTPUT_DIR" "$TEMP_DIR"
 
+# Check and install yt-dlp if needed
+if ! command -v yt-dlp &> /dev/null; then
+    echo "yt-dlp not found. Installing via pip..."
+    pip3 install --user yt-dlp
+fi
+
 echo "=== Step 1: Downloading audio from YouTube ==="
 # Download audio as mp3 using yt-dlp
 yt-dlp -x --audio-format mp3 -o "$TEMP_DIR/audio.%(ext)s" "$URL"
